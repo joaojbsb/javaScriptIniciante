@@ -1,11 +1,12 @@
 function substituirPares(array){
+
     for (let i = 0; i < array.length; i++) {
         if (array[i] === 0) {
             console.log("Numero zero")
         } else if (array[i] % 2 === 0){
             console.log(`Substituindo ${array[i]} por 0`);
             array[i] = 0;
-        } 
+
     }
     return array;
 }
