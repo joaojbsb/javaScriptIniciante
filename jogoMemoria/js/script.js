@@ -2,6 +2,8 @@ const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
+let nAttempts = document.querySelector('.attempts');
+let attempts = 0;
 
 function flipCard(){
     if (lockBoard) return;
@@ -19,11 +21,16 @@ function flipCard(){
 };
 
 function checkForMath() {
+    attempts = attempts + 1;
+    console.log(attempts);
+    console.log(nAttempts)
+    nAttempts.innerHTML = "Número de Tentativas = " + attempts;
     if (firstCard.dataset.card === secondCard.dataset.card) {
         disableCards();
         return;
     }
     unflipCards();
+
 };
 
 function disableCards(){
